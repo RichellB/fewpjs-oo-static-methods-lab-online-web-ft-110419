@@ -16,13 +16,14 @@ class Formatter {
     for ( let w = 0; w < arrayW.length; w++ ) {
       if ( w === 0 ) {
         results.push( this.capitalize( arrayW[ w ] ) )
-      } else if ( wordExcept.includes( arrayW[ w ] ) ) {
-          results.push( arrayW[ w ] )
+      } else {
+        if ( exceptions.includes( arrayOfWords[ n ] ) ) {
+          result.push( arrayOfWords[ n ] )
         } else {
-          results.push( this.capitalize( arrayW[ w ] ) )
+          result.push( this.capitalize( arrayOfWords[ n ] ) )
         }
       }
 
     }
-    return results.join( " " );
+    return result.join( " " );
   }
